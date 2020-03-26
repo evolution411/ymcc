@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% block page_content %}
+<div class="row">
+{% for video in videos %}
+	<div class='col-md-6'>
+		<div class="video-title">
+			<a href="{{ video.get_absolute_url }}">{{video.title}}</a>
+		</div>
+	
+	<p class="text-muted">by <a href="{% url 'user-videos' video.poster.username %}"> {{video.poster}}</a></p>
+	<div class="videos">
+	{% video video.link %}
+	</div>
+	
+	</div>
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block page_content %}
+<div class="row">
+	<div class="col-md-8">
+			<form method="post">
+		{% csrf_token %}
+		<fieldset class="form-group">
+			<legend class="h4 border-bottom mb-4">Post Ads</legend>
+			<!-- {{form|crispy}} -->
+			<div class="radio-inline">
+			<label>Status:</label>
+			{{form.status}}
+
+			<label>Location:</label>
+			{{form.location}}
+
+			</div>
+			Title: {{form.title}}
+			Description: {{form.description}}
+			Contact: {{form.contact}}
+		</fieldset>
+		<div class="form-group">
+			<button type="submit" class="btn btn-outline-info"> Submit </button>
+		</div>
+		</form>
+	</div>
+
+</div>
+
+{% endblock %}

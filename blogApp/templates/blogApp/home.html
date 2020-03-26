@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load crispy_forms_tags %}
+
+{% block page_content %}
+
+<div class="row mb-2">
+	<div class="col-md-6">
+		<div class="card flex-md-row mb-4 shadow-sm h-md-250">
+			<div class="card-body d-flex flex-column align-items-start">
+				<i class="fa fa-play fa-2x videoplayer"></i>
+				<strong class="d-inline-block mb-2 text-primary"><a href="{% url 'video-list' %}">Balling Movements</a></strong>
+				<h3 class="mb-0">Showcase</h3>
+
+				<p>Basketball game clips from young rookies to prime.</p>
+
+			</div>
+
+			<img class="card-img-right flex-auto d-none d-lg-block" style="width: 200px; height: 250px;" src="/static/img/basketball.jpg">
+		</div>
+		
+	</div>
+
+	<div class="col-md-6">
+		<div class="card flex-md-row mb-4 shadow-sm h-md-250">
+			<div class="card-body d-flex flex-column align-items-start">
+				<i class="fa fa-heart fa-2x videoplayer"></i>
+				<strong class="d-inline-block mb-2 text-primary"><a href="{% url 'blog-list' %}">Living Styles</a></strong>
+				<h3 class="mb-0">Living Resources</h3>
+
+				<p>Plenty of resources that will benefit you in every way.</p>
+
+			</div>
+
+			<img class="card-img-right flex-auto d-none d-lg-block" style="width: 200px; height: 250px;" src="/static/img/heart.jpg">
+		</div>
+			
+	</div>
+
+
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-6 blog-main">
+		<h3 class="mb-4 font-italic">Living Styles</h3>
+
+			{% for blog in blogs %}
+	<div class="blog-post">
+
+	<h5 class="blog-post-title">{{blog.title}}</h5>
+	<p class="blog-post-meta">{{blog.date_posted|date:"F d, Y"}}</p>
+	<p>{{blog.description}}</p>
+	<span class="badge badge-pill"><i class="fa fa-phone"></i> {{blog.contact}}</span>
+	</div>
+	{% endfor %}
+
+	</div>
+
+	<div class="col-md-6  news-main">
+		<h3 class="mb-4 font-italic">Hot News</h3>
+		<ul class="list-group list-group-flush">
+	   	{% for article in news %}
+	   	<li class="list-group-item"><a href="{{article.url}}" target="_blank">{{article.title}}</a></li>
+	   	{% endfor %}
+	   	<li class="list-group-item" styel="text-align: right"><a href="{% url 'news-home' %}">More</a></li>
+
+	</ul>
+		
+	</div>
+
+</div>
+
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-secondary">
+	<div class="col-md-6 px-0">
+		<h1 class="display-4 font-italic">Ads goes to here</h1>
+	</div>
+</div>
+
+
+
+{% endblock %}
+

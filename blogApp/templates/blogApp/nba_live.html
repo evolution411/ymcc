@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% block page_content %}
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="card text-center">
+			<div class="card-header">
+			NBA Games
+			</div>
+			<ul class="list-group list-group-horizontal">
+			{% for matchTitle, matchLink in nbadict.items %}
+			<li class="list-group-item">
+				<small class="text-muted"><a href="{{matchLink}}" target="_blank">{{ matchTitle }}</a></small>
+			</li>
+			
+			{% endfor %}
+			</ul>
+	
+	</div>
+		
+	</div>
+	</div>
+
+{% endblock %}

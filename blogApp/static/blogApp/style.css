@@ -1,0 +1,160 @@
+body{
+	color:#33333;
+}
+.card-img-top{
+  width:100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+.text-dark{
+  color: #343a40!important
+}
+.fa-play, .fa-heart{
+  color: red;
+}
+
+.display-4 {
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+/*main blog section*/
+.blog-post{
+  color: #796e79;
+  border-bottom: solid 1px #373640aa;
+  margin-bottom: 2rem;
+}
+
+.account-img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%
+/*	margin-right: 20px;
+	margin-bottom: 20px;*/
+}
+.radiobuttons li{
+  display: inline-block;
+}
+.nav-icon{
+	color: #fff;
+}
+.main-content{
+	padding-top:20px;
+}
+.password-reset-form{
+	text-align: center;
+}
+.videos{
+	margin: auto;
+}
+.videolist{
+	margin:auto;
+	text-align: center;
+	border:none;
+
+}
+
+.vid_description{
+	text-align: left;
+}
+
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic{
+	text-align: center;
+}
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-email {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  /*background-color: #fafcfd;*/
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+.video-title{
+	font-family: 'Ubuntu';
+	font-size: medium;
+}
+.nav-link, .dropdown-item{
+	font-family: 'Montserrat';
+}
+.dropdown-item{
+	color: #563d7c;
+}
+.dropdown-item:hover{
+	
+	font-weight:bold;
+}
+.nav-link:hover{
+	color:#fff;
+}

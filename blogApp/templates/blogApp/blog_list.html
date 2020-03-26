@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block page_content %}
+<div class="col-md-6">
+	<form class="form-inline" method="get" accept-charset="utf-8">
+
+	{{filter.form.as_p}}
+
+	<button type="submit" class="btn btn-primary btn-sm">Search</button>
+	</form>
+	
+</div>
+{% for blog in filter.qs %}
+
+<div class="row">
+	<div class="col-md-7">
+			<div class="list-group">
+			<div class="list-group-item list-group-item-action flex-column align-items-start">
+			<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1">{{blog.title}}</h5>
+
+			<small class="text-muted">{{blog.date_posted|date:"F d, Y"}}</small>
+
+			</div>
+			<p class="mb-1">{{blog.description}}</p>
+			<span class="badge badge-pill badge-info">Contact: {{blog.contact}}</span>
+			</div>
+			</div>
+	</div>
+
+</div>
+{% endfor %}
+{% endblock %}
+

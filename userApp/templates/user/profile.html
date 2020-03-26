@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block page_content %}
+	<div class="content-section">
+		<div class="row profile">
+		
+		<div class="col-md-3">
+		<div class="profile-sidebar">
+			<div class="profile-userpic">
+				<img class="account-img" src="{{user.profile.image.url}}" alt="avatar">
+			</div>
+			
+			<div class="profile-usertitle">
+				<div class="profile-usertitle-name">
+					{{user.username}}
+				</div>
+				<div class="profile-usertitle-email">
+					{{user.email}}
+				</div>
+			</div>
+			<div>
+				<ul class="list-group list-group-flush">
+				  <li class="list-group-item"><a href="{% url 'user-videos' user.username %}"> My Videos</a></li>
+				  <li class="list-group-item"><a href="{% url 'user-blogs' user.username %}">My Posts</a></li>
+
+				</ul>
+				
+			</div>
+		</div>
+<!-- 
+		<div class="profile-usermenu">
+			<ul class="nav">
+				<li class="active">
+					<a href="#"><i class="glyphicon glyphicon-home"></i>Overview</a>
+				</li>
+				<li>
+					<a href="#">
+					<i class="glyphicon glyphicon-user"></i>
+					My Videos </a>
+				</li>
+				
+			</ul>
+		</div> -->
+		</div>
+		<div class="col-md-8 profile_form">
+		
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4"> Profile Info</legend>
+				{{ u_form|crispy }}
+				{{p_form|crispy }}
+			</fieldset>
+			<div class="form-group">
+				<button class="btn btn-outline-info" type="submit">Update</button>
+			</div>
+		</form>
+		</div>
+		</div>
+	</div>
+{% endblock %}
